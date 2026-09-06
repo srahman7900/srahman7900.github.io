@@ -33,37 +33,56 @@ a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(47,107,102
 a:hover{border-bottom-color:var(--teal)}
 a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px;border-radius:2px}
 
-.shell{max-width:1180px;margin:0 auto;padding:0 28px;display:grid;gap:48px}
+.shell{max-width:1180px;margin:0 auto;padding:0 28px;display:grid;gap:44px}
 @media(min-width:940px){
-  .shell{grid-template-columns:270px minmax(0,1fr);gap:72px;padding:0 40px}
+  .shell{grid-template-columns:264px minmax(0,1fr);gap:68px;padding:0 40px;
+         align-items:start}
 }
 
 /* ---------- left rail ---------- */
 .rail{padding:44px 0 0}
+
 @media(min-width:940px){
-  .rail{position:sticky;top:0;height:100vh;padding:70px 0 40px;
-        display:flex;flex-direction:column}
+  .rail{
+    position:sticky;
+    top:0;
+    align-self:start;
+    max-height:100vh;
+    max-height:100dvh;
+    padding:52px 14px 30px 0;
+    display:flex;
+    flex-direction:column;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    scrollbar-color:var(--rule) transparent;
+  }
+  .rail::-webkit-scrollbar{width:7px}
+  .rail::-webkit-scrollbar-track{background:transparent}
+  .rail::-webkit-scrollbar-thumb{background:var(--rule);border-radius:4px}
+  .rail::-webkit-scrollbar-thumb:hover{background:var(--ink-faint)}
 }
+
 .portrait{
-  width:132px;height:132px;border-radius:3px;object-fit:cover;
-  display:block;margin:0 0 22px;background:var(--paper-2);
+  width:116px;height:116px;border-radius:3px;object-fit:cover;
+  display:block;margin:0 0 18px;background:var(--paper-2);
   box-shadow:0 0 0 1px var(--rule);
 }
-@media(max-width:939px){.portrait{width:104px;height:104px;margin-bottom:18px}}
+@media(max-width:939px){.portrait{width:104px;height:104px}}
 
-.name{font-family:var(--serif);font-weight:500;font-size:29px;line-height:1.15;
-      letter-spacing:-.015em;margin:0 0 12px}
-.tagline{color:var(--ink-soft);font-size:15.5px;line-height:1.55;margin:0 0 20px;max-width:30ch}
+.name{font-family:var(--serif);font-weight:500;font-size:27px;line-height:1.15;
+      letter-spacing:-.015em;margin:0 0 10px}
+.tagline{color:var(--ink-soft);font-size:15px;line-height:1.5;margin:0 0 18px;max-width:30ch}
 
 .open-note{
   border-left:2px solid var(--ochre);
-  padding:3px 0 3px 13px;margin:0 0 24px;
-  font-size:14px;line-height:1.5;color:var(--ink-soft);max-width:28ch;
+  padding:3px 0 3px 13px;margin:0 0 20px;
+  font-size:13.5px;line-height:1.45;color:var(--ink-soft);max-width:28ch;
   display:flex;gap:9px;align-items:flex-start;
 }
 .open-note .dot{
   flex:0 0 auto;width:7px;height:7px;border-radius:50%;
-  background:var(--ochre);margin-top:7px;
+  background:var(--ochre);margin-top:6px;
   animation:breathe 3.6s ease-in-out infinite;
 }
 .open-note b{color:var(--ink);font-weight:600;display:block}
@@ -71,30 +90,32 @@ a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px;border-radius:
   0%,100%{box-shadow:0 0 0 0 rgba(154,108,34,.34)}
   50%{box-shadow:0 0 0 5px rgba(154,108,34,0)}
 }
-.rail-meta{font-size:14.5px;color:var(--ink-faint);margin:0 0 24px;line-height:1.9}
+
+.rail-meta{font-size:14px;color:var(--ink-faint);margin:0 0 20px;line-height:1.85}
 .rail-meta a{color:var(--ink-soft)}
 
-nav{border-top:1px solid var(--rule);padding-top:18px}
-nav ol{list-style:none;margin:0;padding:0;font-size:15px}
-nav li{margin:0 0 3px}
-nav a{display:block;padding:3px 0 3px 16px;color:var(--ink-faint);
+nav{border-top:1px solid var(--rule);padding-top:15px}
+nav ol{list-style:none;margin:0;padding:0;font-size:14.5px}
+nav li{margin:0 0 1px}
+nav a{display:block;padding:3px 0 3px 15px;color:var(--ink-faint);
       border-bottom:none;border-left:2px solid transparent;transition:color .18s,border-color .18s}
 nav a:hover{color:var(--ink)}
 nav a.current{color:var(--ink);border-left-color:var(--ochre)}
 @media(max-width:939px){nav{display:none}}
 
-.rail-foot{margin-top:auto;padding-top:22px;font-size:13.5px;color:var(--ink-faint)}
+.rail-foot{margin-top:24px;padding-top:16px;border-top:1px solid var(--rule);
+           font-size:13px;color:var(--ink-faint);line-height:1.5}
 
 /* ---------- main ---------- */
-main{padding:0 0 96px}
+main{padding:0 0 96px;min-width:0}
 @media(min-width:940px){main{padding:70px 0 120px}}
 
-section{margin:0 0 62px;scroll-margin-top:32px}
+section{margin:0 0 62px;scroll-margin-top:28px}
 h2{font-family:var(--serif);font-weight:500;font-size:23px;letter-spacing:-.01em;
    margin:0 0 20px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
 p{max-width:66ch;margin:0 0 15px}
 
-.opening{margin:0 0 60px;max-width:62ch}
+.opening{margin:0 0 58px;max-width:62ch}
 .opening p{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.45;
            letter-spacing:-.012em;color:var(--ink);margin:0}
 @media(max-width:620px){.opening p{font-size:22px}}
@@ -113,7 +134,7 @@ figure.work-figure figcaption{font-size:13.5px;color:var(--ink-faint);
 .pub h3{font-family:var(--serif);font-weight:500;font-size:18.5px;line-height:1.4;
         margin:0 0 6px;color:var(--ink)}
 .venue{font-size:15px;color:var(--ink-soft);margin:0 0 6px;max-width:60ch}
-.doi{font-size:14px;color:var(--ink-faint);margin:0}
+.doi{font-size:14px;color:var(--ink-faint);margin:0;word-break:break-word}
 .status{display:inline-block;font-size:13px;font-weight:600;color:var(--ochre);margin:0 0 7px}
 .status.out{color:var(--teal)}
 
@@ -171,7 +192,7 @@ figure.work-figure figcaption{font-size:13.5px;color:var(--ink-faint);
 .contact-box{background:var(--paper-2);border-radius:4px;padding:26px 28px;max-width:66ch}
 .contact-box p{margin:0 0 12px}
 .contact-box p:last-child{margin:0}
-.contact-list{font-size:16px;line-height:2}
+.contact-list{font-size:16px;line-height:2;word-break:break-word}
 
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -184,7 +205,7 @@ figure.work-figure figcaption{font-size:13.5px;color:var(--ink-faint);
 <div class="shell">
 
   <header class="rail">
-    <img class="portrait" src="assets/Dp.jpg" alt="Portrait of Md Shohanoor Rahman" width="132" height="132">
+    <img class="portrait" src="assets/Dp.jpg" alt="Portrait of Md Shohanoor Rahman" width="116" height="116">
     <h1 class="name">Md Shohanoor Rahman</h1>
     <p class="tagline">Explainable and generative models for medical imaging. Software engineer at Brain Station 23, Dhaka.</p>
     <p class="open-note">
@@ -220,7 +241,7 @@ figure.work-figure figcaption{font-size:13.5px;color:var(--ink-faint);
       <h2>Research</h2>
       <p>My published work applies feature attribution to clinical prediction: chronic kidney disease and multi-class obesity classification, both using SHAP and LIME to expose what drives a prediction. The limitation became clear quickly. Attribution tells you which inputs a model weighted. It does not tell you whether the model learned anything a physician would recognise as reasoning.</p>
       <p>My current work approaches this from the generative side. ClinDiffXAI conditions a diffusion model on clinical concepts to synthesise dermoscopic skin lesion images, so the concepts a model depends on can be varied deliberately and inspected, rather than inferred after the fact. It also addresses a practical constraint: dermoscopic datasets are small, imbalanced, and skewed toward lighter skin tones.</p>
-      <p>Alongside this I am interested in empirical software engineering. Three and a half years of shipping production systems under client deadlines has left me with a stock of questions about how software actually gets built, and those questions are studiable.</p>
+      <p>Alongside this, I am interested in empirical software engineering. Three and a half years of shipping production systems under client deadlines has left me with a stock of questions about how software actually gets built, and those questions are studiable.</p>
 
       <!--
         FIGURE SLOT. Uncomment once you have a real figure from your own work.
@@ -228,7 +249,7 @@ figure.work-figure figcaption{font-size:13.5px;color:var(--ink-faint);
         reader is looking at, what varies across it, and the dataset name.
 
       <figure class="work-figure">
-        <img src="images/clindiffxai.png" alt="Describe precisely what the figure shows.">
+        <img src="assets/clindiffxai.png" alt="Describe precisely what the figure shows.">
         <figcaption>Say what the figure is and what it demonstrates.</figcaption>
       </figure>
       -->
@@ -293,7 +314,7 @@ figure.work-figure figcaption{font-size:13.5px;color:var(--ink-faint);
             <div class="client-body">
               <h4>NCC Always</h4>
               <p class="who">NCC Bank PLC, Bangladesh</p>
-              <p>A digital banking platform for NCC Bank PLC. An all-in-one web portal for banking transactions like MFS, bill pay, fund transfers, etc. Built with Spring Boot, Kafka, Angular.</p>
+              <p>An all-in-one digital banking portal covering mobile financial services, bill payment, and fund transfers. Built with Spring Boot, Kafka, and Angular.</p>
             </div>
           </li>
 
@@ -397,8 +418,8 @@ figure.work-figure figcaption{font-size:13.5px;color:var(--ink-faint);
         <p class="contact-list">
           <a href="mailto:srahman7900@gmail.com">srahman7900@gmail.com</a><br>
           <a href="https://orcid.org/0009-0004-4447-7502">ORCID 0009-0004-4447-7502</a><br>
-          <a href="https://linkedin.com/in/shohanoor-rahman/">linkedin.com/in/shohanoor-rahman</a><br>
-          <a href="https://github.com/srahman7900">github.com/shohanoorr</a><br>
+          <a href="https://www.linkedin.com/in/shohanoor-rahman/">linkedin.com/in/shohanoor-rahman/</a><br>
+          <a href="https://github.com/srahman7900">github.com/srahman7900</a><br>
           <a href="Shohanoor_Rahman_CV.pdf">Curriculum vitae</a>
         </p>
       </div>
