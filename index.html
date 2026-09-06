@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Md Shohanoor Rahman</title>
+<meta name="description" content="Software engineer in Dhaka working on explainable and generative models for medical imaging. Applying for doctoral study, Fall 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF2F2;
+  --paper-2:#E4EAEA;
+  --ink:#1B2A2E;
+  --ink-soft:#4C6067;
+  --ink-faint:#7B8E93;
+  --teal:#2F6B66;
+  --ochre:#9A6C22;
+  --rule:#CBD6D6;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(47,107,102,.32)}
+a:hover{border-bottom-color:var(--teal)}
+a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px;border-radius:2px}
+
+.shell{max-width:1180px;margin:0 auto;padding:0 28px;display:grid;gap:48px}
+@media(min-width:940px){
+  .shell{grid-template-columns:270px minmax(0,1fr);gap:72px;padding:0 40px}
+}
+
+/* ---------- left rail ---------- */
+.rail{padding:44px 0 0}
+@media(min-width:940px){
+  .rail{position:sticky;top:0;height:100vh;padding:70px 0 40px;
+        display:flex;flex-direction:column}
+}
+
+.portrait{
+  width:132px;height:132px;border-radius:3px;object-fit:cover;
+  display:block;margin:0 0 22px;
+  background:var(--paper-2);
+  box-shadow:0 0 0 1px var(--rule);
+}
+@media(max-width:939px){
+  .portrait{width:104px;height:104px;margin-bottom:18px}
+}
+
+.name{font-family:var(--serif);font-weight:500;font-size:29px;line-height:1.15;
+      letter-spacing:-.015em;margin:0 0 12px}
+.tagline{color:var(--ink-soft);font-size:15.5px;line-height:1.55;margin:0 0 24px;max-width:30ch}
+.rail-meta{font-size:14.5px;color:var(--ink-faint);margin:0 0 24px;line-height:1.9}
+.rail-meta a{color:var(--ink-soft)}
+
+nav{border-top:1px solid var(--rule);padding-top:18px}
+nav ol{list-style:none;margin:0;padding:0;font-size:15px}
+nav li{margin:0 0 3px}
+nav a{display:block;padding:3px 0 3px 16px;color:var(--ink-faint);
+      border-bottom:none;border-left:2px solid transparent;transition:color .18s,border-color .18s}
+nav a:hover{color:var(--ink)}
+nav a.current{color:var(--ink);border-left-color:var(--ochre)}
+@media(max-width:939px){nav{display:none}}
+
+.rail-foot{margin-top:auto;padding-top:22px;font-size:13.5px;color:var(--ink-faint)}
+
+/* ---------- main ---------- */
+main{padding:0 0 96px}
+@media(min-width:940px){main{padding:70px 0 120px}}
+
+section{margin:0 0 62px;scroll-margin-top:32px}
+h2{font-family:var(--serif);font-weight:500;font-size:23px;letter-spacing:-.01em;
+   margin:0 0 20px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
+p{max-width:66ch;margin:0 0 15px}
+
+/* opening statement */
+.opening{margin:0 0 60px;max-width:62ch}
+.opening p{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.45;
+           letter-spacing:-.012em;color:var(--ink);margin:0}
+@media(max-width:620px){.opening p{font-size:22px}}
+
+/* figure slot, for a real figure once you have one */
+figure.work-figure{margin:0 0 26px;max-width:560px}
+figure.work-figure img{width:100%;height:auto;display:block;border-radius:3px;
+  box-shadow:0 0 0 1px var(--rule)}
+figure.work-figure figcaption{font-size:13.5px;color:var(--ink-faint);
+  margin:10px 0 0;line-height:1.5;max-width:56ch}
+
+/* publications */
+.pub{padding:0 0 20px 20px;margin:0 0 22px;border-left:2px solid var(--rule)}
+.pub:last-child{margin-bottom:0}
+.pub.live{border-left-color:var(--teal)}
+.pub.draft{border-left-color:var(--ochre)}
+.pub h3{font-family:var(--serif);font-weight:500;font-size:18.5px;line-height:1.4;
+        margin:0 0 6px;color:var(--ink)}
+.venue{font-size:15px;color:var(--ink-soft);margin:0 0 6px;max-width:60ch}
+.doi{font-size:14px;color:var(--ink-faint);margin:0}
+.status{display:inline-block;font-size:13px;font-weight:600;color:var(--ochre);margin:0 0 7px}
+.status.out{color:var(--teal)}
+
+/* entries */
+.entry{margin:0 0 30px;max-width:70ch}
+.entry:last-child{margin-bottom:0}
+.entry-head{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin:0 0 4px}
+.entry h3{font-family:var(--serif);font-weight:500;font-size:19px;margin:0;line-height:1.35}
+.when{font-size:14.5px;color:var(--ink-faint);white-space:nowrap}
+.where{font-size:15.5px;color:var(--ink-soft);margin:0 0 12px}
+.work{margin:0;padding:0;list-style:none}
+.work li{position:relative;padding:0 0 0 18px;margin:0 0 13px;max-width:64ch;font-size:16px}
+.work li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:1.5px;background:var(--ink-faint)}
+.work strong{font-weight:600;color:var(--ink)}
+
+/* projects */
+.proj{border-top:1px solid var(--rule);padding:15px 0}
+.proj:first-of-type{border-top:none;padding-top:0}
+.proj h3{font-family:var(--sans);font-weight:600;font-size:16.5px;margin:0 0 4px}
+.proj p{font-size:15.5px;color:var(--ink-soft);margin:0;max-width:64ch}
+
+/* facts */
+.facts{display:grid;gap:22px 40px;grid-template-columns:1fr;max-width:70ch}
+@media(min-width:620px){.facts{grid-template-columns:1fr 1fr}}
+.fact h3{font-family:var(--sans);font-size:15px;font-weight:600;margin:0 0 7px;color:var(--ink)}
+.fact p{font-size:15.5px;color:var(--ink-soft);margin:0}
+
+.stack{font-size:15.5px;color:var(--ink-soft);max-width:66ch}
+.stack b{color:var(--ink);font-weight:600}
+
+/* contact */
+.contact-box{background:var(--paper-2);border-radius:4px;padding:26px 28px;max-width:66ch}
+.contact-box p{margin:0 0 12px}
+.contact-box p:last-child{margin:0}
+.contact-list{font-size:16px;line-height:2}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <header class="rail">
+    <img class="portrait" src="profile.jpg"
+         alt="Portrait of Md Shohanoor Rahman"
+         width="132" height="132">
+    <h1 class="name">Md Shohanoor Rahman</h1>
+    <p class="tagline">Explainable and generative models for medical imaging. Software engineer at Brain Station 23, Dhaka.</p>
+    <p class="rail-meta">
+      <a href="mailto:srahman7900@gmail.com">srahman7900@gmail.com</a><br>
+      <a href="https://orcid.org/0009-0004-4447-7502">ORCID 0009-0004-4447-7502</a><br>
+      <a href="https://linkedin.com/in/shohanoor-rahman/">LinkedIn</a>
+    </p>
+    <nav aria-label="Sections">
+      <ol>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#engineering">Engineering</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#background">Background</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+    <p class="rail-foot">Applying for doctoral study, Fall 2027.</p>
+  </header>
+
+  <main>
+
+    <div class="opening">
+      <p>A model that predicts a diagnosis correctly but cannot say why is of limited use to the person who has to act on it. That gap is what I work on.</p>
+    </div>
+
+    <section id="research">
+      <h2>Research</h2>
+      <p>My published work applies feature attribution to clinical prediction: chronic kidney disease and multi-class obesity classification, both using SHAP and LIME to expose what drives a prediction. The limitation became clear quickly. Attribution tells you which inputs a model weighted. It does not tell you whether the model learned anything a physician would recognise as reasoning.</p>
+      <p>My current work approaches this from the generative side. ClinDiffXAI conditions a diffusion model on clinical concepts to synthesise dermoscopic skin lesion images, so the concepts a model depends on can be varied deliberately and inspected, rather than inferred after the fact. It also addresses a practical constraint: dermoscopic datasets are small, imbalanced, and skewed toward lighter skin tones.</p>
+      <p>Alongside this I am interested in empirical software engineering. Three and a half years of shipping production systems under client deadlines has left me with a stock of questions about how software actually gets built, and those questions are studiable.</p>
+
+      <!--
+        FIGURE SLOT. Uncomment once you have a real figure from your own work,
+        for example a concept-conditioned generation grid from ClinDiffXAI.
+        Use only figures you produced yourself. Write a caption that says
+        exactly what the reader is looking at, and name the dataset.
+
+      <figure class="work-figure">
+        <img src="figure-clindiffxai.png"
+             alt="Describe precisely what the figure shows.">
+        <figcaption>Say what the figure is, what varies across it, and what
+        it demonstrates.</figcaption>
+      </figure>
+      -->
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <article class="pub live">
+        <span class="status out">Published</span>
+        <h3>Explainable Machine Learning for Chronic Kidney Disease Prediction with SHAP and LIME</h3>
+        <p class="venue">First author. 2025 28th International Conference on Computer and Information Technology (ICCIT), IEEE.</p>
+        <p class="doi"><a href="https://doi.org/10.1109/ICCIT68739.2025.11490146">doi.org/10.1109/ICCIT68739.2025.11490146</a></p>
+      </article>
+
+      <article class="pub live">
+        <span class="status out">Published</span>
+        <h3>Interpretable Multi-Class Obesity Classification using Bayesian Optimization and SHAP Insights</h3>
+        <p class="venue">First author. 2025 28th International Conference on Computer and Information Technology (ICCIT), IEEE.</p>
+        <p class="doi"><a href="https://doi.org/10.1109/ICCIT68739.2025.11491728">doi.org/10.1109/ICCIT68739.2025.11491728</a></p>
+      </article>
+
+      <article class="pub draft">
+        <span class="status">Manuscript in preparation</span>
+        <h3>ClinDiffXAI: concept-conditioned diffusion for interpretable dermoscopic image synthesis</h3>
+        <p class="venue">A framework for controllable synthesis of skin lesion images, evaluated on concept fidelity and generation quality. Preparing for submission to Artificial Intelligence in Medicine.</p>
+      </article>
+    </section>
+
+    <section id="engineering">
+      <h2>Engineering</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Software Engineer</h3>
+          <span class="when">March 2023 to present</span>
+        </div>
+        <p class="where">Brain Station 23 PLC, Dhaka</p>
+        <ul class="work">
+          <li><strong>Tennant Company, United States.</strong> Optimus, an Azure cloud platform serving a fleet of autonomous floor-cleaning machines. Real-time collection and aggregation of machine telemetry, exposed through API-driven services that feed the Hercules and IRIS portals.</li>
+          <li><strong>AB Direct, AB Bank PLC.</strong> An internet banking system with an administrative portal, built as Spring Boot microservices with Angular, Kafka, PostgreSQL, and Redis.</li>
+          <li><strong>Pocket.</strong> A digital wallet with separate administrator, customer, and merchant portals, on the same microservice stack.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="proj">
+        <h3>Synthetic data generation with CTGAN</h3>
+        <p>Undergraduate thesis. A generative system for producing tabular synthetic data, aimed at the data scarcity that limits deep learning in applied settings.</p>
+      </div>
+      <div class="proj">
+        <h3>Aerial satellite imagery to map routes</h3>
+        <p>Image-to-image translation with a conditional GAN, using an encoder-decoder generator and a PatchGAN discriminator.</p>
+      </div>
+      <div class="proj">
+        <h3>Unpaired image translation with CycleGAN</h3>
+        <p>Translation between two visual domains without paired training examples.</p>
+      </div>
+      <div class="proj">
+        <h3>Biomedical image segmentation</h3>
+        <p>A 23-layer U-Net implementation for segmenting biomedical images.</p>
+      </div>
+    </section>
+
+    <section id="background">
+      <h2>Background</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>B.Sc. in Computer Science and Engineering</h3>
+          <span class="when">2017 to 2023</span>
+        </div>
+        <p class="where">Rajshahi University of Engineering and Technology</p>
+      </div>
+
+      <div class="facts">
+        <div class="fact">
+          <h3>GRE General Test</h3>
+          <p>Quantitative 165, Verbal 147, Analytical Writing 3.0. Taken July 2025.</p>
+        </div>
+        <div class="fact">
+          <h3>IELTS Academic</h3>
+          <p>Overall band 6.5, with 7.0 in listening. Taken November 2025.</p>
+        </div>
+        <div class="fact">
+          <h3>Coursework</h3>
+          <p>Data structures, analysis of algorithms, operating systems, computer architecture, distributed systems, artificial intelligence, database systems, digital signal processing.</p>
+        </div>
+        <div class="fact">
+          <h3>Certification</h3>
+          <p>DeepLearning.AI specialisations in Generative Adversarial Networks and in Deep Learning.</p>
+        </div>
+      </div>
+
+      <p class="stack" style="margin-top:26px">
+        <b>Languages.</b> Python, Java, TypeScript, C and C++, SQL.<br>
+        <b>Research.</b> PyTorch, TensorFlow, LaTeX.<br>
+        <b>Systems.</b> Spring Boot, Angular, Kafka, PostgreSQL, Redis, Azure, Git.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-box">
+        <p>I am applying for doctoral study beginning Fall 2027, in explainable and generative machine learning for medical imaging, and in empirical software engineering. I am glad to discuss either.</p>
+        <p class="contact-list">
+          <a href="mailto:srahman7900@gmail.com">srahman7900@gmail.com</a><br>
+          <a href="https://orcid.org/0009-0004-4447-7502">ORCID 0009-0004-4447-7502</a><br>
+          <a href="https://linkedin.com/in/shohanoor-rahman/">linkedin.com/in/shohanoor-rahman</a><br>
+          <a href="cv.pdf">Curriculum vitae</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  if(!links.length||!('IntersectionObserver' in window)) return;
+  var map={};
+  links.forEach(function(l){ map[l.getAttribute('href').slice(1)]=l; });
+  var obs=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(l){ l.classList.remove('current'); });
+        if(map[e.target.id]) map[e.target.id].classList.add('current');
+      }
+    });
+  },{rootMargin:'-15% 0px -70% 0px'});
+  ['research','publications','engineering','projects','background','contact']
+    .forEach(function(id){ var el=document.getElementById(id); if(el) obs.observe(el); });
+})();
+</script>
+</body>
+</html>
