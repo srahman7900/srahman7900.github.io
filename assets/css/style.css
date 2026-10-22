@@ -66,6 +66,7 @@ body {
   overflow-wrap: break-word;
 }
 img, svg { display: block; max-width: 100%; }
+[hidden] { display: none !important; }
 a { color: var(--accent); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
@@ -173,8 +174,9 @@ main section:first-child { border-top: 0; }
   padding: 3.5rem 0 3rem;
 }
 .hero h1 { margin-bottom: 0.6rem; }
+.hero-links { grid-column: 1 / -1; }
 .identity { font-size: 1.2rem; line-height: 1.5; margin-bottom: 0.75rem; max-width: 34em; }
-.status-line { color: var(--muted); margin-bottom: 1.5rem; }
+.status-line { color: var(--muted); margin-bottom: 0; }
 .portrait {
   width: 176px; height: 176px; border-radius: 50%;
   object-fit: cover; background: var(--surface);
@@ -250,6 +252,7 @@ main section:first-child { border-top: 0; }
 .tiles .cap { display: block; font-size: 0.85rem; color: var(--muted); line-height: 1.4; margin-top: 0.3rem; }
 @media (max-width: 640px) {
   .tiles { grid-template-columns: repeat(2, 1fr); }
+  .card { padding: 1.1rem 1rem 1rem; }
 }
 
 /* Method outline: boxes joined by arrows; stacks on small screens */
