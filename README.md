@@ -1,108 +1,63 @@
+# srahman7900.github.io
 
-📧 [srahman7900@gmail.com](mailto:srahman7900@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/shohanoor-rahman/)  
-📞 +8801748821307  
-📍 Dhaka, Bangladesh  
+Source of my academic homepage: https://srahman7900.github.io
 
----
+A static site in plain HTML, CSS and a little JavaScript. There is no build step. GitHub Pages serves the files as they are (`.nojekyll` turns Jekyll off).
 
-##  Career Objective
+| File | Purpose |
+|---|---|
+| `index.html` | Main page: all sections and their content |
+| `cv.html` | CV page that embeds the PDF |
+| `Shohanoor_Rahman_CV.pdf` | The CV. Keep this file name. |
+| `assets/css/style.css` | All styles, light and dark themes, print styles |
+| `assets/js/main.js` | Theme toggle, mobile menu, active section, BibTeX copy |
+| `assets/img/portrait.webp`, `portrait.jpg` | Portrait (WebP with JPEG fallback) |
+| `404.html`, `sitemap.xml`, `robots.txt`, `favicon.svg` | Site files |
 
-I am passionate about advancing Computer Science through innovative research and impactful applications. My interests span Machine Learning (ML), Deep Learning (DL), Generative Models such as GANs, Computer Vision, and Recurrent Neural Networks (RNNs). I enjoy designing intelligent systems that can learn effectively, adapt to real-world challenges, and deliver meaningful results. I place strong emphasis on effective hyperparameter tuning to maximize performance and efficiency. Additionally, I value the role of Explainable AI in gaining deeper insights into the decision-making processes of ML and DL models, enabling the development of more transparent and trustworthy systems. With a solid foundation in both theory and practical projects, I aim to contribute meaningfully to research in the Computer Science domain, driving progress across diverse and evolving areas.
+## Preview locally
 
----
+```sh
+python3 -m http.server 8000
+# open http://localhost:8000
+```
 
-##  Education
+## How to update
 
-- **Rajshahi University of Engineering & Technology (RUET)**  
-  *Bachelor of Science in Computer Science & Engineering*  
-  *Rajshahi, Bangladesh | Jan 2017 – 2020*
+### Replace the CV PDF
+1. Export the PDF from Overleaf.
+2. Save it over `Shohanoor_Rahman_CV.pdf` in the repository root. Keep the same file name, so old links still work.
+3. In `cv.html`, change the line `Updated <month year>`.
 
-- **Madaripur Govt. College**  
-  *Higher Secondary Certificate (HSC); GPA: 5.00/5.00*  
-  *Madaripur, Bangladesh | June 2014 – July 2016*
+### Add a news item
+In `index.html`, find `<ul class="news">` and add a new `<li>` at the top (newest first):
 
----
+```html
+<li><time datetime="2027-01">Jan 2027</time><span>One factual sentence.</span></li>
+```
 
-##  Test Scores
+Keep 3 to 5 items. Remove the oldest one when you add a new one.
 
-- **GRE**  
-  - **Quantitative:** 165  
-  - **Verbal:** 147  
-  - **Analytical Writing:** 3.0
-    
----
+### Add a publication
+1. In `index.html`, find the `Publications` section. Copy an existing `<article class="pub">` block into the right group (journal or conference).
+2. Change the id (for example `pub-c3`), the title, the authors (keep my name in `<strong>`), the venue, the tags and the DOI link.
+3. For BibTeX, change the `aria-controls` value of the BibTeX button and the `id` of the `<div class="bib">` to the same new value (for example `bib-c3`). Use only the fields you know.
+4. When [J1] gets a decision, update its status in three places: the News item, the featured card (`#research`) and the publication entry (`#pub-j1`). Add DOI and BibTeX buttons only after it has a DOI.
+5. Optional: add a `ScholarlyArticle` entry to the JSON-LD block in the `<head>`.
 
-##  Experience
+### Replace the portrait
+Use a square (1:1) photo, at least 800 × 800 px. Make two files at about 480 px wide and replace `assets/img/portrait.webp` and `assets/img/portrait.jpg`, for example with https://squoosh.app or:
 
-### Software Engineer  
-**Brain Station-23 PLC., Dhaka, Bangladesh**  
-*March 2023 – Present*
+```sh
+npx sharp-cli -i photo.jpg -o assets/img/portrait.webp resize 480 480
+npx sharp-cli -i photo.jpg -o assets/img/portrait.jpg resize 480 480
+```
 
-- Developed and maintained digital wallet platforms with a strong focus on secure transactions.
-- Implemented robust authentication and authorization mechanisms to safeguard user data.
-- Optimized microservice gateways to ensure efficient data flow and communication.
-- Led bank integration to establish secure connections with banking partners.
-- Developed signatory hierarchy framework and menu permission system.
-- Implemented bulk transaction processing for high-volume operations.
-- Utilized Apache Kafka for real-time event-driven data processing.
-- Managed deployment, configuration, and monitoring for system stability.
+Then change `width` and `height` on the `<img class="portrait">` tag in `index.html` to the new size.
 
----
+### Change the "Last updated" date
+Change the footer line in `index.html` and `cv.html`, and `<lastmod>` in `sitemap.xml`.
 
-##  Projects
-
-- <img src="assets/tennant.png" width="30"/> **Tennant Company**  
-  Tennant Company provides innovative, battery-powered autonomous cleaning solutions integrated into a scalable cloud platform, Optimus, built on Azure. The system enables real-time data collection, aggregation, and insight generation via API-driven architecture, powering portals like Hercules and IRIS.
-
-- <img src="assets/pocket-icon.png" width="20"/> **Pocket**  
-  E-Wallet with Admin, Customer, and Merchant Portals using Spring Boot microservices and Angular frontend. Utilized PostgreSQL, Kafka, Redis.
-
-- <img src="assets/ab-logo.png" width="30"/> **AB Direct**  
-  Internet Banking System for AB Bank PLC. with Admin Portal built using Spring Boot microservices, Angular, Kafka, PostgreSQL, Redis.
-
-- <img src="assets/ncc-logo.png" width="30"/> **NCC Always**  
-  All-in-one web portal for banking transactions like MFS, bill pay, fund transfers, etc. Built with Spring Boot, Kafka, Angular.
-
-- **Aerial Satellite Imagery into Map Routes**  
-  Image-to-image translation using Conditional GAN with encoder-decoder and PatchGAN discriminator.
-
-- **Generating Hand-written Images of Digits**  
-  Trained GAN using MNIST dataset to synthesize digit images.
-
-- **Unpaired Image-to-Image Translation**  
-  CycleGAN model to translate horses to zebras and vice versa.
-
-- **Biomedical Image Segmentation**  
-  Implemented U-Net with 23 convolutional layers for segmenting biomedical images.
-
-- **Guess the Number**  
-  A VanillaJS-based number guessing game.
-
----
-
-##  Thesis
-
-- [Generative Adversarial Network based Synthetic Data Generation System](https://github.com/shohanoorr/UG-Thesis.git)
-
----
-##  Certifications
-
-###  Deep Learning & GANs (DeepLearning.AI)
-- [Generative Adversarial Networks (GANs)](https://coursera.org/share/4e77a15c8e4b36a6a1bb5087d89b9ee6)
-- [Build Better Generative Adversarial Networks (GANs)](https://coursera.org/share/22fc3c9a49e2b21da48cf4cea50bc9f7)
-- [Build Basic Generative Adversarial Networks (GANs)](https://www.coursera.org/account/accomplishments/verify/HBCDHSZMQ36U)
-- [Apply Generative Adversarial Networks (GANs)](https://coursera.org/share/d04cde9a4bf3b81cb0124f67b2621fa6)
-- [Neural Networks and Deep Learning](https://www.coursera.org/account/accomplishments/verify/UCUXWGK6HMRK)
-- [Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization](https://coursera.org/share/be50cd3a6ffbd98c1089dc4ca99d89b1)
-- [Convolutional Neural Networks](https://coursera.org/share/0c0962410e14a6578bc35b7b6d32cc1b)
-- [Sequence Models](https://coursera.org/share/31c21f5616a5c2da4eb6157e318751c5)
-
-###  Programming & Data Foundations
-- [Programming for Everybody (Getting Started with Python) – University of Michigan](https://www.coursera.org/account/accomplishments/verify/SVXBF7NQUTSP)
-- [Foundations: Data, Data, Everywhere – Google](https://coursera.org/share/dfc2165696b8b739e7581026d19f1c70)
-
----
-
-- **Languages:** Python, Java, JavaScript, TypeScript, C/C++, SQL  
-- **Technologies:** Tensorflow, Distributed Systems, Spring Boot, Angular, Apache Kafka, PostgreSQL
+## Writing rules for this site
+- No em dash characters. Use a comma, a colon or two sentences.
+- British spelling in my own sentences. Copy paper titles exactly.
+- Change the [J1] status only after the journal sends a decision.
