@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://srahman7900.github.io/sitemap.xml
