@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Md Shohanoor Rahman: Generative AI, Vision and Software Engineering</title>
-<meta name="description" content="I work on generative AI and computer vision, and on methods that test whether AI models can be trusted. I am also interested in software engineering research.">
+<title>Md Shohanoor Rahman: Generative Models and Computer Vision</title>
+<meta name="description" content="Prospective PhD student (Fall 2027). I use generative models to test whether the explanations of computer vision models are correct.">
 <meta name="author" content="Md Shohanoor Rahman">
 <link rel="canonical" href="https://srahman7900.github.io/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -12,14 +12,14 @@
 <meta name="theme-color" content="#14171a" media="(prefers-color-scheme: dark)">
 
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Md Shohanoor Rahman: Generative AI, Vision and Software Engineering">
-<meta property="og:description" content="I work on generative AI and computer vision, and on methods that test whether AI models can be trusted. I am also interested in software engineering research.">
+<meta property="og:title" content="Md Shohanoor Rahman: Generative Models and Computer Vision">
+<meta property="og:description" content="Prospective PhD student (Fall 2027). I use generative models to test whether the explanations of computer vision models are correct.">
 <meta property="og:url" content="https://srahman7900.github.io/">
 <meta property="og:image" content="https://srahman7900.github.io/assets/img/portrait.jpg">
 <meta property="og:image:alt" content="Portrait of Md Shohanoor Rahman">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Md Shohanoor Rahman: Generative AI, Vision and Software Engineering">
-<meta name="twitter:description" content="I work on generative AI and computer vision, and on methods that test whether AI models can be trusted. I am also interested in software engineering research.">
+<meta name="twitter:title" content="Md Shohanoor Rahman: Generative Models and Computer Vision">
+<meta name="twitter:description" content="Prospective PhD student (Fall 2027). I use generative models to test whether the explanations of computer vision models are correct.">
 <meta name="twitter:image" content="https://srahman7900.github.io/assets/img/portrait.jpg">
 
 <!-- Apply the saved theme before first paint, to avoid a flash -->
@@ -127,7 +127,7 @@
   <section class="hero" aria-labelledby="name">
     <div>
       <h1 id="name">Md Shohanoor Rahman</h1>
-      <p class="identity">I work on generative AI and computer vision, and on methods that test whether AI models can be trusted. I am also interested in software engineering research.</p>
+      <p class="identity">I use generative models to test whether the explanations of computer vision models are correct.</p>
       <p class="status-line">Software Engineer at Brain Station 23, Dhaka. Applying for PhD programs starting Fall 2027.</p>
     </div>
     <picture>
@@ -146,9 +146,9 @@
   <!-- 2. About -->
   <section id="about" aria-labelledby="about-h">
     <h2 id="about-h">About</h2>
-    <p>I am a software engineer, and I do research outside my job with academic collaborators. My research question is: when an AI model explains a decision, is the explanation true to the model?</p>
-    <p>I use generative models to answer this. In my recent study, I used a diffusion model to change one feature of a skin lesion image at a time, and I measured how a classifier&rsquo;s output changed. I tested this audit on classifiers whose correct answer I already knew. In this setting, a popular method called TCAV failed a sanity check, and another common method ranked the image features in the wrong order. I have also published two IEEE conference papers on explainable machine learning for health data.</p>
-    <p>In my PhD, I want to build better ways to test the explanations of computer vision models. I am also interested in empirical software engineering, because I have built banking and cloud software for more than three years. After my PhD, I want to stay in academia and keep doing research.</p>
+    <p>I am a software engineer, and I do research outside my job with academic collaborators. Many methods claim to explain what an image classifier has learned. I want to know when we can trust these explanations, and how to check them.</p>
+    <p>In my recent study, I built a diffusion model that changes one skin-lesion feature at a time and used it to audit melanoma classifiers. I then tested the audit on control classifiers whose correct answer I already knew. The study taught me that the checks also need checking: one kind of control was confounded, and classifiers trained on random labels also gave significant results. Before this, I published two IEEE conference papers on explainable machine learning for health data.</p>
+    <p>In my PhD, I want to build reliable tests for explanations of computer vision and generative models. I am also interested in empirical software engineering, because I have built banking and cloud software for more than three years. After my PhD, I want to stay in academia and continue my research.</p>
     <h3 class="visually-hidden">Research interests</h3>
     <ul class="chips">
       <li>Generative models</li>
@@ -166,7 +166,7 @@
   <section id="news" aria-labelledby="news-h">
     <h2 id="news-h">News</h2>
     <ul class="news">
-      <li><time datetime="2026-10">Oct 2026</time><span>Submitted a manuscript on validating concept-level audits of melanoma classifiers to <i>Scientific Reports</i>. It is under review. <a href="https://github.com/srahman7900/melanoma-concept-audit">Code and result tables</a> are public.</span></li>
+      <li><time datetime="2026-10">Oct 2026</time><span>Submitted a manuscript on testing concept-level audits of melanoma classifiers to <i>Scientific Reports</i>. It is under review. <a href="https://github.com/srahman7900/melanoma-concept-audit">Code and result tables</a> are public.</span></li>
       <li><time datetime="2025-12">Dec 2025</time><span>Presented &ldquo;Interpretable Multi-Class Obesity Classification Using Bayesian Optimization and SHAP Insights&rdquo; at IEEE ICCIT 2025, Cox&rsquo;s Bazar (19&ndash;21 Dec 2025).</span></li>
       <li><time datetime="2025-12">Dec 2025</time><span>Two first-author papers in the proceedings of IEEE ICCIT 2025.</span></li>
       <li><time datetime="2023-03">Mar 2023</time><span>Joined Brain Station 23 PLC as a Software Engineer.</span></li>
@@ -177,77 +177,80 @@
   <section id="research" aria-labelledby="research-h">
     <h2 id="research-h">Featured research</h2>
     <article class="card" aria-labelledby="j1-card-title">
-      <h3 id="j1-card-title">Validating concept-level audits of melanoma classifiers with diffusion counterfactuals and matched positive controls</h3>
-      <p class="authors small"><strong>Md. Shohanoor Rahman</strong>&#8202;*, Md. Hasibul Islam, Md Kishor Morol, Moinul Hossain, Dip Nandi, Liew Tze Hui</p>
-      <p class="venue small muted">Under review, <i>Scientific Reports.</i><span class="muted">* First and corresponding author.</span></p>
+      <h3 id="j1-card-title">Testing concept-level audits of melanoma classifiers with diffusion counterfactuals and matched positive controls</h3>
+      <p class="authors small"><strong>Md. Shohanoor Rahman</strong>, Md. Hasibul Islam, Md Kishor Morol, Moinul Hossain, Dip Nandi, Liew Tze Hui</p>
+      <p class="venue small muted">Under review, <i>Scientific Reports</i>. First author.</p>
 
-      <p class="question"><b>Question.</b> If only one clinical sign in a dermoscopy image changes, how does a melanoma classifier&rsquo;s output change, and do common explanation methods agree?</p>
+      <p class="question"><b>Question.</b> Do concept explanations of melanoma classifiers find what a classifier really uses? I tested a counterfactual audit, TCAV and observational attribution on control classifiers whose training target is known.</p>
 
       <ul class="tiles">
-        <li><span class="num">38</span><span class="cap">classifiers, 31 of them controls with a known answer</span></li>
-        <li><span class="num">16 / 16</span><span class="cap">matched controls passed</span></li>
-        <li><span class="num">12 / 12</span><span class="cap">independently labelled controls passed (3 concepts)</span></li>
-        <li><span class="num">+2.77</span><span class="cap">logits: pigmentation effect</span></li>
+        <li><span class="num">16 / 16</span><span class="cap">matched controls: the audit found the target</span></li>
+        <li><span class="num">11 / 16</span><span class="cap">matched controls: TCAV (my implementation) found the target</span></li>
+        <li><span class="num">12 / 12</span><span class="cap">controls labelled by a second evaluator: the audit found the target (3 concepts)</span></li>
+        <li><span class="num">15 / 15</span><span class="cap">ISIC 2020 classifiers raised by the pigmentation sweep (+3.12 logits on average)</span></li>
       </ul>
 
       <figure class="method">
         <svg class="flow-h" viewBox="0 0 760 84" role="img" aria-labelledby="flow-h-title">
-          <title id="flow-h-title">Method outline: diffusion generator, move one concept, counterfactual pair, change in classifier logit, check against controls.</title>
+          <title id="flow-h-title">Method outline: concept pseudo-labels, diffusion generator, sweep one knob from 0 to 1, change in classifier logit, check with matched controls and null classifiers.</title>
           <rect class="flow-box" x="1" y="10" width="122" height="64" rx="8"/>
-          <text class="flow-text" x="62" y="38" text-anchor="middle">Diffusion</text>
-          <text class="flow-text" x="62" y="55" text-anchor="middle">generator</text>
+          <text class="flow-text" x="62" y="38" text-anchor="middle">Concept</text>
+          <text class="flow-text" x="62" y="55" text-anchor="middle">pseudo-labels</text>
           <path class="flow-arrow" d="M127 42h24"/><path class="flow-head" d="M157 42l-7-4.5v9z"/>
           <rect class="flow-box" x="160" y="10" width="122" height="64" rx="8"/>
-          <text class="flow-text" x="221" y="38" text-anchor="middle">Move one</text>
-          <text class="flow-text" x="221" y="55" text-anchor="middle">concept</text>
+          <text class="flow-text" x="221" y="38" text-anchor="middle">Diffusion</text>
+          <text class="flow-text" x="221" y="55" text-anchor="middle">generator</text>
           <path class="flow-arrow" d="M286 42h24"/><path class="flow-head" d="M316 42l-7-4.5v9z"/>
           <rect class="flow-box" x="319" y="10" width="122" height="64" rx="8"/>
-          <text class="flow-text" x="380" y="38" text-anchor="middle">Counterfactual</text>
-          <text class="flow-text" x="380" y="55" text-anchor="middle">pair</text>
+          <text class="flow-text" x="380" y="38" text-anchor="middle">Sweep one</text>
+          <text class="flow-text" x="380" y="55" text-anchor="middle">knob, 0 to 1</text>
           <path class="flow-arrow" d="M445 42h24"/><path class="flow-head" d="M475 42l-7-4.5v9z"/>
           <rect class="flow-box" x="478" y="10" width="122" height="64" rx="8"/>
           <text class="flow-text" x="539" y="38" text-anchor="middle">Change in</text>
           <text class="flow-text" x="539" y="55" text-anchor="middle">classifier logit</text>
           <path class="flow-arrow" d="M604 42h24"/><path class="flow-head" d="M634 42l-7-4.5v9z"/>
           <rect class="flow-box end" x="637" y="10" width="122" height="64" rx="8"/>
-          <text class="flow-text" x="698" y="38" text-anchor="middle">Check against</text>
-          <text class="flow-text" x="698" y="55" text-anchor="middle">controls</text>
+          <text class="flow-text" x="698" y="38" text-anchor="middle">Controls and</text>
+          <text class="flow-text" x="698" y="55" text-anchor="middle">null classifiers</text>
         </svg>
         <svg class="flow-v" viewBox="0 0 260 326" role="img" aria-labelledby="flow-v-title">
-          <title id="flow-v-title">Method outline: diffusion generator, move one concept, counterfactual pair, change in classifier logit, check against controls.</title>
+          <title id="flow-v-title">Method outline: concept pseudo-labels, diffusion generator, sweep one knob from 0 to 1, change in classifier logit, check with matched controls and null classifiers.</title>
           <rect class="flow-box" x="20" y="1" width="220" height="44" rx="8"/>
-          <text class="flow-text" x="130" y="28" text-anchor="middle">Diffusion generator</text>
+          <text class="flow-text" x="130" y="28" text-anchor="middle">Concept pseudo-labels</text>
           <path class="flow-arrow" d="M130 48v14"/><path class="flow-head" d="M130 68l-4.5-7h9z"/>
           <rect class="flow-box" x="20" y="71" width="220" height="44" rx="8"/>
-          <text class="flow-text" x="130" y="98" text-anchor="middle">Move one concept</text>
+          <text class="flow-text" x="130" y="98" text-anchor="middle">Diffusion generator</text>
           <path class="flow-arrow" d="M130 118v14"/><path class="flow-head" d="M130 138l-4.5-7h9z"/>
           <rect class="flow-box" x="20" y="141" width="220" height="44" rx="8"/>
-          <text class="flow-text" x="130" y="168" text-anchor="middle">Counterfactual pair</text>
+          <text class="flow-text" x="130" y="168" text-anchor="middle">Sweep one knob from 0 to 1</text>
           <path class="flow-arrow" d="M130 188v14"/><path class="flow-head" d="M130 208l-4.5-7h9z"/>
           <rect class="flow-box" x="20" y="211" width="220" height="44" rx="8"/>
           <text class="flow-text" x="130" y="238" text-anchor="middle">Change in classifier logit</text>
           <path class="flow-arrow" d="M130 258v14"/><path class="flow-head" d="M130 278l-4.5-7h9z"/>
           <rect class="flow-box end" x="20" y="281" width="220" height="44" rx="8"/>
-          <text class="flow-text" x="130" y="308" text-anchor="middle">Check against controls</text>
+          <text class="flow-text" x="130" y="308" text-anchor="middle">Controls and null classifiers</text>
         </svg>
-        <figcaption>Method outline. Each step changes one concept and measures the effect on the classifier; controls with a known answer check the audit.</figcaption>
+        <figcaption>Method outline. The generator sweeps one concept knob while the other six concepts, the start noise and the colour stay fixed. Controls with a known target and permuted-label null classifiers check the audit.</figcaption>
       </figure>
 
       <h4>What I did</h4>
       <ul>
-        <li>Trained a concept-conditioned DDPM (128 px, ISIC 2020) in which each of the seven 7-point checklist concepts is a knob from 0 to 1, while the rest of the image stays fixed.</li>
-        <li>Found a signal-leak bias in the start noise (R&sup2; = 0.90) and removed it with a colour-calibrated start noise: colour outliers fell from 78.5&ndash;84.8% to 6.6&ndash;13.3%. An independent evaluator found 4 of the 7 knobs specific (pigment network, vascular structures, pigmentation, regression structures).</li>
-        <li>Trained 38 classifiers: 6 ISIC 2020 melanoma classifiers (ResNet-50, EfficientNet-B0, ViT-B/16, two seeds each), 1 Derm7pt classifier and 31 controls with a known answer.</li>
-        <li>Fixed each decision rule in code before its run and reported the rule that failed: quartile-based controls were confounded. Matched controls then passed 16 of 16. Because those labels also conditioned the generator, I repeated the test with independently labelled controls under a rule fingerprinted with SHA-256 before the run: 12 of 12 passed for three concepts. Regression had too few pairs to test.</li>
+        <li>Trained a concept-conditioned DDPM on ISIC 2020 images (128 px). Each of the seven 7-point checklist concepts is a knob from 0 to 1.</li>
+        <li>Found a signal-leak bias in the start noise (cross-validated R&sup2; = 0.90) and fixed it with colour-calibrated start noise: colour outliers fell from 78.5&ndash;84.8% to 6.6&ndash;13.3%.</li>
+        <li>Checked the knobs with a separately trained evaluator. Four of seven knobs were target-dominant, but they also changed other concepts.</li>
+        <li>Built control classifiers with known training targets: quartile controls, 16 matched controls, 12 controls labelled by a second evaluator, and 18 permuted-label classifiers as a null distribution. Audited 15 ISIC 2020 melanoma classifiers (three architectures, five seeds), 6 HAM10000 classifiers and 1 Derm7pt classifier.</li>
+        <li>Fixed each decision rule in code before the run that tested it, with SHA-256 fingerprints for the later rules, and reported the rule that failed.</li>
       </ul>
 
       <h4>Findings</h4>
       <ul>
-        <li>In this setting, two TCAV implementations (mine and Captum) failed a permuted-label negative control (0.834 and 0.889 against a limit of 0.25). Part of the failure traced to the network architecture. Captum 0.9.0 misreports CAV accuracy; newer Captum code handles this.</li>
-        <li>Observational attribution passed the controls but ranked vascular structures first for all six melanoma classifiers. The validated audit found a large pigmentation effect (+2.77 logits) and small vascular (+0.29) and pigment-network (+0.05) effects.</li>
+        <li>The quartile controls were confounded, so the audit failed its first pre-specified rule. With matched controls, the audit found the target in 16 of 16, and in 12 of 12 controls labelled by a second evaluator, for three concepts. TCAV found fewer: 11 of 16 (my implementation) and 0 of 3 (Captum 0.9.0).</li>
+        <li>Permuted-label classifiers also gave significant sweep responses and target rankings. Standardised effect margins separated the controls from these null classifiers, so audit effects need to be read against such a null.</li>
+        <li>The pigmentation sweep raised the melanoma logit in 15 of 15 ISIC 2020 classifiers (+3.12 on average) and in 6 of 6 HAM10000 classifiers (+4.01), about four times the null response in scale-free units. The regression effect did not transfer.</li>
+        <li>Observational attribution also recovered the control targets but described the melanoma classifiers differently from the audit. An exploratory decomposition suggested that knob cross-talk partly hides the vascular response.</li>
       </ul>
 
-      <p class="limits"><b>Limits.</b> 128 px images; one main training dataset (ISIC 2020); no dermatologist rated the generated images; regression structures validated only with the generator&rsquo;s own labels; the TCAV result holds for this setting.</p>
+      <p class="limits"><b>Limits.</b> The knobs are not isolated; images are 128 px; the generator was trained only on ISIC 2020 and saw its test melanomas; no dermatologist rated the generated images; regression structures were validated with the generator&rsquo;s own labels only; the matched-control rules were fixed after the first rule failed, and several analyses are post hoc; the TCAV results hold only for the implementations and layers tested.</p>
 
       <ul class="btn-row">
         <li><a class="btn btn-sm" href="https://github.com/srahman7900/melanoma-concept-audit"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Code and result tables (MIT)</a></li>
@@ -262,7 +265,7 @@
     <div class="pub-group">
       <h3>Journal manuscript</h3>
       <article class="pub" id="pub-j1">
-        <p class="pub-title"><span class="pub-id">[J1]</span> Validating concept-level audits of melanoma classifiers with diffusion counterfactuals and matched positive controls</p>
+        <p class="pub-title"><span class="pub-id">[J1]</span> Testing concept-level audits of melanoma classifiers with diffusion counterfactuals and matched positive controls</p>
         <p><strong>Md. Shohanoor Rahman</strong>, Md. Hasibul Islam, Md Kishor Morol, Moinul Hossain, Dip Nandi, Liew Tze Hui</p>
         <p class="venue">Under review, Scientific Reports.</p>
         <ul class="tags"><li>First author</li></ul>
@@ -338,9 +341,9 @@
     <h2 id="exp-h">Research experience</h2>
 
     <div class="entry">
-      <h3>Validating concept-level audits of melanoma classifiers <a href="#pub-j1">[J1]</a></h3>
+      <h3>Testing concept-level audits of melanoma classifiers <a href="#pub-j1">[J1]</a></h3>
       <p class="meta">Remote · Dec 2025&ndash;present</p>
-      <p class="role">First and corresponding author. Supervisors: Md Kishor Morol (ELITE Research Lab) and Liew Tze Hui.</p>
+      <p class="role">First author. Supervisors: Md Kishor Morol (ELITE Research Lab, New York), Liew Tze Hui (Multimedia University, Malaysia) and Dip Nandi (American International University-Bangladesh).</p>
       <p>I conceived the study, designed the method, wrote all code, ran all experiments, did the analysis, made the figures and wrote the first draft. Compute: Kaggle (2&times; T4 GPUs, TPU v5e-8).</p>
     </div>
 
@@ -359,9 +362,9 @@
     </div>
   </section>
 
-  <!-- 7. Engineering -->
+  <!-- 7. Industry experience -->
   <section id="engineering" data-nav="experience" aria-labelledby="eng-h">
-    <h2 id="eng-h">Engineering</h2>
+    <h2 id="eng-h">Industry experience</h2>
     <div class="entry">
       <h3>Software Engineer, Brain Station 23 PLC</h3>
       <p class="meta">Dhaka · Mar 2023&ndash;present</p>
@@ -384,7 +387,6 @@
       <h3>B.Sc. in Computer Science &amp; Engineering</h3>
       <p class="meta">Rajshahi University of Engineering &amp; Technology (RUET), Rajshahi, Bangladesh · Jan 2017&ndash;Aug 2023</p>
       <p>Thesis: <a href="https://github.com/shohanoorr/UG-Thesis">Generative Adversarial Network based Synthetic Data Generation System</a>. Supervisor: Barshon Sen.</p>
-      <p class="small muted">Test scores: GRE General 312 (Quantitative 165, Verbal 147, Analytical Writing 3.0), July 2025</p>
       <details class="coursework">
         <summary>Relevant coursework</summary>
         <ul class="course-grid">
@@ -409,6 +411,11 @@
         </ul>
       </details>
     </div>
+    <div class="entry">
+      <h3>GRE General Test</h3>
+      <p class="meta">July 2025</p>
+      <p>312 (Quantitative 165, Verbal 147, Analytical Writing 3.0)</p>
+    </div>
   </section>
 
   <!-- 9. Skills -->
@@ -416,7 +423,7 @@
     <h2 id="skills-h">Skills</h2>
     <dl class="skills">
       <div><dt>Machine learning</dt><dd>PyTorch, TensorFlow, scikit-learn, XGBoost, CatBoost; diffusion models (DDPM, DDIM, classifier-free guidance), GANs, concept bottleneck models, CNN and ViT training.</dd></div>
-      <div><dt>Explainability and evaluation</dt><dd>TCAV and Captum, SHAP, LIME; interventional and matched-control evaluation; non-parametric statistics (Wilcoxon, Benjamini-Hochberg, bootstrap).</dd></div>
+      <div><dt>Explainability and evaluation</dt><dd>TCAV and Captum, SHAP, LIME; interventional and matched-control evaluation; permuted-label null classifiers; non-parametric statistics (Wilcoxon, Benjamini-Hochberg, bootstrap).</dd></div>
       <div><dt>Reproducible research</dt><dd>Decision rules fixed in code before each run, SHA-256 fingerprints, code released as run.</dd></div>
       <div><dt>Programming and tools</dt><dd>Python, Java, TypeScript, C/C++, SQL; Git, LaTeX, Kaggle (multi-GPU and TPU), JIRA, Confluence.</dd></div>
       <div><dt>Systems</dt><dd>Spring Boot, Angular, Kafka, PostgreSQL, Redis, Kubernetes, Microsoft Azure (Service Bus, AI Search).</dd></div>
@@ -481,7 +488,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>&copy; 2026 Md Shohanoor Rahman · Last updated: 22 October 2026</p>
+    <p>&copy; 2026 Md Shohanoor Rahman · Last updated: 31 October 2026</p>
   </div>
 </footer>
 
