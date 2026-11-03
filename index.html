@@ -75,6 +75,22 @@
       "publisher": { "@type": "Organization", "name": "IEEE" },
       "identifier": { "@type": "PropertyValue", "propertyID": "DOI", "value": "10.1109/ICCIT68739.2025.11490146" },
       "sameAs": "https://doi.org/10.1109/ICCIT68739.2025.11490146"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "Testing concept-level audits of melanoma classifiers with diffusion counterfactuals and matched positive controls",
+      "author": [
+        { "@id": "https://srahman7900.github.io/#person" },
+        { "@type": "Person", "name": "Md. Hasibul Islam" },
+        { "@type": "Person", "name": "Md Kishor Morol" },
+        { "@type": "Person", "name": "Moinul Hossain" },
+        { "@type": "Person", "name": "Dip Nandi" },
+        { "@type": "Person", "name": "Liew Tze Hui" }
+      ],
+      "datePublished": "2026-11-01",
+      "isPartOf": { "@type": "CreativeWork", "name": "arXiv" },
+      "identifier": { "@type": "PropertyValue", "propertyID": "DOI", "value": "10.48550/arXiv.2611.02119" },
+      "sameAs": "https://arxiv.org/abs/2611.02119"
     }
   ]
 }
@@ -164,6 +180,7 @@
   <section id="news" aria-labelledby="news-h">
     <h2 id="news-h">News</h2>
     <ul class="news">
+      <li><time datetime="2026-11">Nov 2026</time><span>The melanoma concept-audit manuscript is now a preprint on <a href="https://arxiv.org/abs/2611.02119">arXiv (2611.02119)</a>.</span></li>
       <li><time datetime="2026-10">Oct 2026</time><span>Submitted a manuscript on testing concept-level audits of melanoma classifiers to <i>Scientific Reports</i>. It is under review. <a href="https://github.com/srahman7900/melanoma-concept-audit">Code and result tables</a> are public.</span></li>
       <li><time datetime="2025-12">Dec 2025</time><span>Presented &ldquo;Interpretable Multi-Class Obesity Classification Using Bayesian Optimization and SHAP Insights&rdquo; at IEEE ICCIT 2025, Cox&rsquo;s Bazar (19&ndash;21 Dec 2025).</span></li>
       <li><time datetime="2025-12">Dec 2025</time><span>Two first-author papers in the proceedings of IEEE ICCIT 2025.</span></li>
@@ -177,7 +194,7 @@
     <article class="card" aria-labelledby="j1-card-title">
       <h3 id="j1-card-title">Testing concept-level audits of melanoma classifiers with diffusion counterfactuals and matched positive controls</h3>
       <p class="authors small"><strong>Md. Shohanoor Rahman</strong>, Md. Hasibul Islam, Md Kishor Morol, Moinul Hossain, Dip Nandi, Liew Tze Hui</p>
-      <p class="venue small muted">Under review, <i>Scientific Reports</i>. First author.</p>
+      <p class="venue small muted">Preprint, arXiv:2611.02119. Under review, <i>Scientific Reports</i>. First author.</p>
 
       <p class="question"><b>Question.</b> Do concept explanations of melanoma classifiers find what a classifier really uses? I tested a counterfactual audit, TCAV and observational attribution on control classifiers whose training target is known.</p>
 
@@ -251,6 +268,7 @@
       <p class="limits"><b>Limits.</b> The knobs are not isolated; images are 128 px; the generator was trained only on ISIC 2020 and saw its test melanomas; no dermatologist rated the generated images; regression structures were validated with the generator&rsquo;s own labels only; the matched-control rules were fixed after the first rule failed, and several analyses are post hoc; the TCAV results hold only for the implementations and layers tested.</p>
 
       <ul class="btn-row">
+        <li><a class="btn btn-sm" href="https://arxiv.org/abs/2611.02119"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>Preprint (arXiv)</a></li>
         <li><a class="btn btn-sm" href="https://github.com/srahman7900/melanoma-concept-audit"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Code and result tables (MIT)</a></li>
       </ul>
     </article>
@@ -261,15 +279,32 @@
     <h2 id="pubs-h">Publications</h2>
 
     <div class="pub-group">
-      <h3>Journal manuscript</h3>
+      <h3>Preprint under journal review</h3>
       <article class="pub" id="pub-j1">
         <p class="pub-title"><span class="pub-id">[J1]</span> Testing concept-level audits of melanoma classifiers with diffusion counterfactuals and matched positive controls</p>
         <p><strong>Md. Shohanoor Rahman</strong>, Md. Hasibul Islam, Md Kishor Morol, Moinul Hossain, Dip Nandi, Liew Tze Hui</p>
-        <p class="venue">Under review, Scientific Reports.</p>
+        <p class="venue">arXiv:2611.02119 [cs.CV], Nov 2026. Under review, Scientific Reports.</p>
         <ul class="tags"><li>First author</li></ul>
         <ul class="btn-row actions">
+          <li><a class="btn btn-sm" href="https://arxiv.org/abs/2611.02119">arXiv</a></li>
           <li><a class="btn btn-sm" href="https://github.com/srahman7900/melanoma-concept-audit">Code</a></li>
+          <li><button class="btn btn-sm" type="button" data-bib-toggle aria-expanded="false" aria-controls="bib-j1">BibTeX</button></li>
         </ul>
+        <div class="bib" id="bib-j1" hidden>
+<pre>@misc{rahman2026testing,
+  author        = {Rahman, Md. Shohanoor and Islam, Md. Hasibul and Morol, Md Kishor and Hossain, Moinul and Nandi, Dip and Liew, Tze Hui},
+  title         = {Testing concept-level audits of melanoma classifiers with diffusion counterfactuals and matched positive controls},
+  year          = {2026},
+  eprint        = {2611.02119},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  doi           = {10.48550/arXiv.2611.02119}
+}</pre>
+          <div class="bib-bar">
+            <button class="btn btn-sm" type="button" data-bib-copy>Copy BibTeX</button>
+            <span class="copy-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
       </article>
     </div>
 
@@ -491,7 +526,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>&copy; 2026 Md Shohanoor Rahman · Last updated: 1 November 2026</p>
+    <p>&copy; 2026 Md Shohanoor Rahman · Last updated: 3 November 2026</p>
   </div>
 </footer>
 
