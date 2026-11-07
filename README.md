@@ -57,6 +57,18 @@ Then change `width` and `height` on the `<img class="portrait">` tag in `index.h
 ### Change the "Last updated" date
 Change the footer line in `index.html` and `cv.html`, and `<lastmod>` in `sitemap.xml`.
 
+### Collaboration form (FormSubmit)
+The form in the Collaborate section sends messages to srahman7900@gmail.com through [FormSubmit](https://formsubmit.co). Nothing to install. The first message after going live triggers an activation email from FormSubmit; click the link in it once. After that, FormSubmit offers a random alias string: put it in place of the email address in the form's `action` and `data-ajax` attributes so the address is not in the form code.
+
+### View counter (GoatCounter)
+`index.html` and `cv.html` load the GoatCounter script, which counts visits without cookies. Once a day, `.github/workflows/view-stats.yml` reads the totals and the top three countries and writes `country-stats.json` to the `stats` branch. The footer pill reads that file and stays hidden until it exists.
+
+Setup, once:
+1. Sign up at goatcounter.com with the code `srahman7900`. If that code is taken, use another and change it in `index.html`, `cv.html` and the workflow (`GC_SITE`).
+2. In GoatCounter, open Settings → API, create a token with "Read statistics" permission, and copy it.
+3. In this GitHub repo, open Settings → Secrets and variables → Actions → New repository secret. Name it `GOATCOUNTER_TOKEN` and paste the token.
+4. Open Actions → View stats → Run workflow. The pill appears after the first run.
+
 ## Writing rules for this site
 - No em dash characters. Use a comma, a colon or two sentences.
 - British spelling in my own sentences. Copy paper titles exactly.

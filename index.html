@@ -26,6 +26,7 @@
 <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="assets/js/main.js" defer></script>
+<script data-goatcounter="https://srahman7900.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
 <script type="application/ld+json">
 {
@@ -106,6 +107,8 @@
   <symbol id="i-pdf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
   <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
   <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M2 9.5 12 5l10 4.5L12 14z"/><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5M22 9.5V15"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M5 12.5 9.5 17 19 7.5"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
 </svg>
 
@@ -144,6 +147,7 @@
       <h1 id="name">Md Shohanoor Rahman</h1>
       <p class="identity">I work on explainable and trustworthy AI with generative models, applied to medical images and health data. Next, I want to bring these methods to biology, chemistry and physics.</p>
       <p class="status-line">Software Engineer at Brain Station 23, Dhaka. Applying for PhD programs starting Fall 2027.</p>
+      <a class="pill-link" href="#collaborate">Open to research collaborations <span aria-hidden="true">&rarr;</span></a>
     </div>
     <picture>
       <source srcset="assets/img/portrait.webp" type="image/webp">
@@ -164,15 +168,32 @@
     <p>I am a software engineer, and I do research outside my job with academic collaborators. My main question is simple: when can we trust what a machine learning model has learned? I study it with explainable AI and generative models.</p>
     <p>I started with generative models in my undergraduate thesis, where we used GANs to create synthetic tabular data and checked its quality from eight angles. I then published two IEEE conference papers on explainable machine learning for health data. In my latest study, I trained a diffusion model that changes one skin-lesion feature at a time and used it to audit melanoma classifiers. It showed me that the checks we use for explanations also need checking.</p>
     <p>In my PhD, I want to develop explanation methods for image and generative models that we can check and trust. In the longer term, I want to work with researchers in biology, chemistry and physics, and use these methods to help answer questions in their fields. After my PhD, I want to stay in academia and continue this research.</p>
-    <h3 class="visually-hidden">Research interests</h3>
-    <ul class="chips">
-      <li>Explainable AI</li>
-      <li>Trustworthy machine learning</li>
-      <li>Generative models (GANs, diffusion)</li>
-      <li>Computer vision</li>
-      <li>Medical imaging and health data</li>
-      <li>AI for science</li>
-    </ul>
+    <div class="about-grid">
+      <div>
+        <h3 class="label">Interests</h3>
+        <ul class="dot-list">
+          <li>Explainable AI</li>
+          <li>Trustworthy machine learning</li>
+          <li>Generative models (GANs, diffusion)</li>
+          <li>Computer vision</li>
+          <li>Medical imaging and health data</li>
+          <li>AI for science</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="label">Education</h3>
+        <ul class="edu-list">
+          <li>
+            <svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg>
+            <div>
+              <b>B.Sc. in Computer Science &amp; Engineering</b>
+              <span>Rajshahi University of Engineering &amp; Technology (RUET), 2017&ndash;2023</span>
+              <span>Thesis: GAN-based synthetic tabular data</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- 3. News -->
@@ -508,24 +529,103 @@
   </section>
 
   <!-- 11. Contact -->
-  <section id="contact" aria-labelledby="contact-h">
-    <h2 id="contact-h">Contact</h2>
-    <p class="lead">I am applying for PhD programs starting Fall 2027 and I welcome questions about my work. Email is the best way to reach me.</p>
-    <ul class="btn-row contact-links">
-      <li><a class="btn btn-primary" href="mailto:srahman7900@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a></li>
-      <li><a class="btn" href="cv.html"><svg class="icon" aria-hidden="true"><use href="#i-pdf"/></svg>CV</a></li>
-      <li><a class="btn" href="https://github.com/srahman7900"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
-      <li><a class="btn" href="https://orcid.org/0009-0004-4447-7502"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg>ORCID</a></li>
-      <li><a class="btn" href="https://www.linkedin.com/in/shohanoor-rahman/"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
+  <section id="collaborate" data-nav="contact" aria-labelledby="collab-h">
+    <p class="eyebrow">Collaborate · Research</p>
+    <h2 id="collab-h">Research collaboration</h2>
+    <p>I am happy to work with students and researchers on explainable AI, generative models, and medical images and health data. I would also like to hear from people in biology, chemistry and physics who have data and questions where AI could help. Tell me about your background and what you want to work on. I read every message myself.</p>
+    <ul class="collab-checks">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Research collaboration only</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Mainly explainable AI, generative models and AI for science</li>
     </ul>
-    <p class="email-text">srahman7900@gmail.com · Dhaka, Bangladesh</p>
+    <form class="card collab-form" action="https://formsubmit.co/srahman7900@gmail.com" method="POST" data-ajax="https://formsubmit.co/ajax/srahman7900@gmail.com">
+      <input type="hidden" name="_subject" value="Research collaboration request (srahman7900.github.io)">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://srahman7900.github.io/#collaborate">
+      <div class="hp" aria-hidden="true"><label for="f-honey">Leave this empty</label><input type="text" id="f-honey" name="_honey" tabindex="-1" autocomplete="off"></div>
+      <div class="form-grid">
+        <div class="field">
+          <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-name" name="Name" type="text" autocomplete="name" required placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@university.edu">
+        </div>
+        <div class="field">
+          <label for="f-aff">Affiliation <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-aff" name="Affiliation" type="text" autocomplete="organization" required placeholder="University, lab or company">
+        </div>
+        <div class="field">
+          <label for="f-role">Current role <span class="req" aria-hidden="true">*</span></label>
+          <select id="f-role" name="Role" required>
+            <option value="">Select&hellip;</option>
+            <option>Undergraduate student</option>
+            <option>Master's student</option>
+            <option>PhD student</option>
+            <option>Postdoc or faculty</option>
+            <option>Industry researcher</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="f-area">Research area <span class="req" aria-hidden="true">*</span></label>
+          <select id="f-area" name="Research area" required>
+            <option value="">Select&hellip;</option>
+            <option>Explainable AI</option>
+            <option>Trustworthy machine learning</option>
+            <option>Generative models</option>
+            <option>Computer vision</option>
+            <option>Medical imaging and health data</option>
+            <option>AI for science</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="f-link">Google Scholar, GitHub or personal site</label>
+          <input id="f-link" name="Link" type="url" autocomplete="url" placeholder="https://">
+        </div>
+        <div class="field full">
+          <label for="f-msg">What do you want to work on? <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="f-msg" name="Message" required placeholder="The problem you have in mind, what you have done on it so far, and what you hope to get from working together."></textarea>
+        </div>
+        <div class="field full">
+          <label for="f-time">Time you can commit</label>
+          <select id="f-time" name="Time">
+            <option value="">Select&hellip;</option>
+            <option>A few hours a week</option>
+            <option>About 10 hours a week</option>
+            <option>Full-time</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Send collaboration request</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+    <p class="form-note">Messages go straight to my inbox through FormSubmit. Nothing is published or shared. Fields marked * are required.</p>
   </section>
 
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>&copy; 2026 Md Shohanoor Rahman · Last updated: 3 November 2026</p>
+    <section id="contact" class="contact" aria-labelledby="contact-h">
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-h">Get in touch</h2>
+      <p>I am applying for PhD programs starting Fall 2027 and I welcome questions about my work. The best way to reach me is by email: <a href="mailto:srahman7900@gmail.com">srahman7900@gmail.com</a></p>
+      <ul class="text-links">
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="https://github.com/srahman7900">GitHub</a></li>
+        <li><a href="https://orcid.org/0009-0004-4447-7502">ORCID</a></li>
+        <li><a href="https://www.linkedin.com/in/shohanoor-rahman/">LinkedIn</a></li>
+      </ul>
+    </section>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Md Shohanoor Rahman · Last updated: 7 November 2026</p>
+      <p class="view-count" data-src="https://raw.githubusercontent.com/srahman7900/srahman7900.github.io/stats/country-stats.json" hidden></p>
+    </div>
   </div>
 </footer>
 

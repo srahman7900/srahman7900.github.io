@@ -63,7 +63,7 @@
   document.querySelectorAll('.nav-list a[href^="#"]').forEach(function (a) {
     navLinks[a.getAttribute('href').slice(1)] = a;
   });
-  var sections = document.querySelectorAll('main section[id]');
+  var sections = document.querySelectorAll('main section[id], #contact');
   if ('IntersectionObserver' in window && sections.length) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -122,4 +122,72 @@
       setTimeout(function () { status.textContent = ''; }, 2500);
     });
   });
+
+  /* ---------- Collaboration form: send through FormSubmit without leaving the page ---------- */
+  var form = document.querySelector('.collab-form');
+  if (form && window.fetch && window.FormData) {
+    var formStatus = form.querySelector('.form-status');
+    var sendBtn = form.querySelector('[type="submit"]');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = {};
+      new FormData(form).forEach(function (value, key) { if (key !== '_next') data[key] = value; });
+      if (data._honey) return; // filled in by a bot
+      sendBtn.disabled = true;
+      formStatus.className = 'form-status';
+      formStatus.textContent = 'Sending…';
+      fetch(form.getAttribute('data-ajax'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (r) { return r.json(); }).then(function (res) {
+        if (String(res.success) !== 'true') throw new Error(res.message || 'not sent');
+        form.reset();
+        formStatus.textContent = 'Thank you. Your message is on its way, and I will reply by email.';
+      }).catch(function () {
+        formStatus.className = 'form-status error';
+        formStatus.textContent = 'Sorry, the message was not sent. Please email me at srahman7900@gmail.com.';
+      }).then(function () { sendBtn.disabled = false; });
+    });
+  }
+
+  /* ---------- View count: daily totals from GoatCounter, written by a GitHub Action ---------- */
+  var views = document.querySelector('.view-count');
+  if (views && window.fetch) {
+    fetch(views.getAttribute('data-src'), { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function (d) {
+        if (!d || typeof d.total !== 'number' || d.total < 1) return;
+        var el = function (tag, cls, text) {
+          var n = document.createElement(tag);
+          if (cls) n.className = cls;
+          if (text != null) n.textContent = text;
+          return n;
+        };
+        views.appendChild(el('b', null, d.total.toLocaleString('en')));
+        views.appendChild(el('span', 'lbl', 'views'));
+        var tip = d.total.toLocaleString('en') + ' total views';
+        var countries = (d.countries || []).filter(function (c) { return /^[a-z]{2}$/.test(c.code); });
+        if (countries.length) {
+          views.appendChild(el('span', null, '·')).setAttribute('aria-hidden', 'true');
+          countries.forEach(function (c) {
+            var item = el('span', 'country');
+            var flag = el('img');
+            flag.src = 'https://flagcdn.com/w40/' + c.code + '.png';
+            flag.alt = c.name;
+            flag.title = c.name;
+            flag.width = 18;
+            flag.height = 14;
+            flag.loading = 'lazy';
+            item.appendChild(flag);
+            item.appendChild(el('b', null, c.count.toLocaleString('en')));
+            views.appendChild(item);
+          });
+          tip += '. Top countries: ' + countries.map(function (c) { return c.name + ' ' + c.count; }).join(', ');
+        }
+        views.title = tip + '. Counted with GoatCounter, without cookies.';
+        views.hidden = false;
+      })
+      .catch(function () { /* no stats yet: keep the pill hidden */ });
+  }
 })();
