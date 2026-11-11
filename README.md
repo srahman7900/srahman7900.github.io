@@ -58,7 +58,7 @@ Then change `width` and `height` on the `<img class="portrait">` tag in `index.h
 Change the footer line in `index.html` and `cv.html`, and `<lastmod>` in `sitemap.xml`.
 
 ### Collaboration form (FormSubmit)
-The form in the Collaborate section sends messages to srahman7900@gmail.com through [FormSubmit](https://formsubmit.co). Nothing to install. The first message after going live triggers an activation email from FormSubmit; click the link in it once. After that, FormSubmit offers a random alias string: put it in place of the email address in the form's `action` and `data-ajax` attributes so the address is not in the form code.
+The form in the Collaborate section sends messages to srahman7900@gmail.com through [FormSubmit](https://formsubmit.co). Nothing to install. The first message after going live triggers an activation email from FormSubmit; click the link in it once. If FormSubmit is down (it sometimes is), the form shows a link that opens the visitor's email app with the message already written, so nothing is lost. After activation, FormSubmit offers a random alias string: put it in place of the email address in the form's `action` and `data-ajax` attributes so the address is not in the form code.
 
 ### View counter (GoatCounter)
 `index.html` and `cv.html` load the GoatCounter script, which counts visits without cookies. Once a day, `.github/workflows/view-stats.yml` reads the totals and the top three countries and writes `country-stats.json` to the `stats` branch. The footer pill reads that file and stays hidden until it exists.

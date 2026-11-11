@@ -145,8 +145,22 @@
         form.reset();
         formStatus.textContent = 'Thank you. Your message is on its way, and I will reply by email.';
       }).catch(function () {
+        // The form service did not answer: keep what the visitor wrote as an email draft
+        var lines = [];
+        Array.prototype.forEach.call(form.elements, function (f) {
+          if (f.name && f.name.charAt(0) !== '_' && f.type !== 'submit' && f.value) {
+            lines.push(f.name + ': ' + f.value);
+          }
+        });
+        var href = 'mailto:' + form.getAttribute('data-mailto') +
+          '?subject=' + encodeURIComponent('Research collaboration request') +
+          '&body=' + encodeURIComponent(lines.join('\n'));
+        var link = document.createElement('a');
+        link.href = href;
+        link.textContent = 'Send it from your email app instead';
         formStatus.className = 'form-status error';
-        formStatus.textContent = 'Sorry, the message was not sent. Please email me at srahman7900@gmail.com.';
+        formStatus.textContent = 'The message could not be sent from this page. ';
+        formStatus.appendChild(link);
       }).then(function () { sendBtn.disabled = false; });
     });
   }
