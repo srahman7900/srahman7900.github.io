@@ -537,15 +537,16 @@
       <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Research collaboration only</li>
       <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Mainly explainable AI, generative models and AI for science</li>
     </ul>
-    <form class="card collab-form" action="https://formsubmit.co/srahman7900@gmail.com" method="POST" data-ajax="https://formsubmit.co/ajax/srahman7900@gmail.com" data-mailto="srahman7900@gmail.com">
-      <input type="hidden" name="_subject" value="Research collaboration request (srahman7900.github.io)">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://srahman7900.github.io/#collaborate">
-      <div class="hp" aria-hidden="true"><label for="f-honey">Leave this empty</label><input type="text" id="f-honey" name="_honey" tabindex="-1" autocomplete="off"></div>
+    <form class="card collab-form" action="https://api.web3forms.com/submit" method="POST" data-ajax="https://api.web3forms.com/submit" data-mailto="srahman7900@gmail.com">
+      <input type="hidden" name="access_key" value="c63453a3-fab6-46e1-a827-c9db4f153292">
+      <input type="hidden" name="subject" value="Research collaboration request (srahman7900.github.io)">
+      <input type="hidden" name="from_name" value="srahman7900.github.io">
+      <input type="hidden" name="redirect" value="https://srahman7900.github.io/#collaborate">
+      <div class="hp" aria-hidden="true"><label for="f-honey">Leave this unchecked</label><input type="checkbox" id="f-honey" name="botcheck" tabindex="-1"></div>
       <div class="form-grid">
         <div class="field">
           <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
-          <input id="f-name" name="Name" type="text" autocomplete="name" required placeholder="Your name">
+          <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Your name">
         </div>
         <div class="field">
           <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
@@ -586,7 +587,7 @@
         </div>
         <div class="field full">
           <label for="f-msg">What do you want to work on? <span class="req" aria-hidden="true">*</span></label>
-          <textarea id="f-msg" name="Message" required placeholder="The problem you have in mind, what you have done on it so far, and what you hope to get from working together."></textarea>
+          <textarea id="f-msg" name="message" required placeholder="The problem you have in mind, what you have done on it so far, and what you hope to get from working together."></textarea>
         </div>
         <div class="field full">
           <label for="f-time">Time you can commit</label>
@@ -604,7 +605,7 @@
         <p class="form-status" role="status" aria-live="polite"></p>
       </div>
     </form>
-    <p class="form-note">Messages go straight to my inbox through FormSubmit. Nothing is published or shared. Fields marked * are required.</p>
+    <p class="form-note">Messages go straight to my inbox through Web3Forms. Nothing is published or shared. Fields marked * are required.</p>
   </section>
 
 </main>

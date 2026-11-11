@@ -57,8 +57,8 @@ Then change `width` and `height` on the `<img class="portrait">` tag in `index.h
 ### Change the "Last updated" date
 Change the footer line in `index.html` and `cv.html`, and `<lastmod>` in `sitemap.xml`.
 
-### Collaboration form (FormSubmit)
-The form in the Collaborate section sends messages to srahman7900@gmail.com through [FormSubmit](https://formsubmit.co). Nothing to install. The first message after going live triggers an activation email from FormSubmit; click the link in it once. If FormSubmit is down (it sometimes is), the form shows a link that opens the visitor's email app with the message already written, so nothing is lost. After activation, FormSubmit offers a random alias string: put it in place of the email address in the form's `action` and `data-ajax` attributes so the address is not in the form code.
+### Collaboration form (Web3Forms)
+The form in the Collaborate section sends messages to srahman7900@gmail.com through [Web3Forms](https://web3forms.com). The `access_key` hidden input in `index.html` is the key Web3Forms emailed to me. It is meant to be public: it can only send messages to my inbox. If the key ever needs replacing, create a new one on web3forms.com and change that one value. If the service does not answer, the form shows a link that opens the visitor's email app with the message already written, so nothing is lost.
 
 ### View counter (GoatCounter)
 `index.html` and `cv.html` load the GoatCounter script, which counts visits without cookies. Once a day, `.github/workflows/view-stats.yml` reads the totals and the top three countries and writes `country-stats.json` to the `stats` branch. The footer pill reads that file and stays hidden until it exists.

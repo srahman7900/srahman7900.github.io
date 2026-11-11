@@ -123,7 +123,7 @@
     });
   });
 
-  /* ---------- Collaboration form: send through FormSubmit without leaving the page ---------- */
+  /* ---------- Collaboration form: send through Web3Forms without leaving the page ---------- */
   var form = document.querySelector('.collab-form');
   if (form && window.fetch && window.FormData) {
     var formStatus = form.querySelector('.form-status');
@@ -131,8 +131,8 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var data = {};
-      new FormData(form).forEach(function (value, key) { if (key !== '_next') data[key] = value; });
-      if (data._honey) return; // filled in by a bot
+      new FormData(form).forEach(function (value, key) { data[key] = value; });
+      if (data.botcheck) return; // ticked by a bot
       sendBtn.disabled = true;
       formStatus.className = 'form-status';
       formStatus.textContent = 'Sending…';
@@ -148,7 +148,7 @@
         // The form service did not answer: keep what the visitor wrote as an email draft
         var lines = [];
         Array.prototype.forEach.call(form.elements, function (f) {
-          if (f.name && f.name.charAt(0) !== '_' && f.type !== 'submit' && f.value) {
+          if (f.name && ['access_key', 'subject', 'from_name', 'redirect', 'botcheck'].indexOf(f.name) < 0 && f.type !== 'submit' && f.value) {
             lines.push(f.name + ': ' + f.value);
           }
         });
