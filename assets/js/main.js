@@ -164,44 +164,4 @@
       }).then(function () { sendBtn.disabled = false; });
     });
   }
-
-  /* ---------- View count: daily totals from GoatCounter, written by a GitHub Action ---------- */
-  var views = document.querySelector('.view-count');
-  if (views && window.fetch) {
-    fetch(views.getAttribute('data-src'), { cache: 'no-cache' })
-      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
-      .then(function (d) {
-        if (!d || typeof d.total !== 'number' || d.total < 1) return;
-        var el = function (tag, cls, text) {
-          var n = document.createElement(tag);
-          if (cls) n.className = cls;
-          if (text != null) n.textContent = text;
-          return n;
-        };
-        views.appendChild(el('b', null, d.total.toLocaleString('en')));
-        views.appendChild(el('span', 'lbl', 'views'));
-        var tip = d.total.toLocaleString('en') + ' total views';
-        var countries = (d.countries || []).filter(function (c) { return /^[a-z]{2}$/.test(c.code); });
-        if (countries.length) {
-          views.appendChild(el('span', null, '·')).setAttribute('aria-hidden', 'true');
-          countries.forEach(function (c) {
-            var item = el('span', 'country');
-            var flag = el('img');
-            flag.src = 'https://flagcdn.com/w40/' + c.code + '.png';
-            flag.alt = c.name;
-            flag.title = c.name;
-            flag.width = 18;
-            flag.height = 14;
-            flag.loading = 'lazy';
-            item.appendChild(flag);
-            item.appendChild(el('b', null, c.count.toLocaleString('en')));
-            views.appendChild(item);
-          });
-          tip += '. Top countries: ' + countries.map(function (c) { return c.name + ' ' + c.count; }).join(', ');
-        }
-        views.title = tip + '. Counted with GoatCounter, without cookies.';
-        views.hidden = false;
-      })
-      .catch(function () { /* no stats yet: keep the pill hidden */ });
-  }
 })();

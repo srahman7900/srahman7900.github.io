@@ -408,7 +408,7 @@ details.coursework summary {
   .form-grid { grid-template-columns: 1fr; }
 }
 
-/* ---------- Footer: contact, views, date ---------- */
+/* ---------- Footer: contact and date ---------- */
 .site-footer { border-top: 1px solid var(--rule); padding: 0 0 2rem; }
 .site-footer p { margin: 0; }
 .contact { padding: 3rem 0 2rem; }
@@ -420,16 +420,6 @@ details.coursework summary {
   padding-top: 1.25rem; border-top: 1px solid var(--rule);
   color: var(--muted); font-size: 0.875rem;
 }
-.view-count {
-  display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.4rem;
-  padding: 0.25rem 0.8rem; border: 1px solid var(--rule); border-radius: 999px;
-  background: var(--surface); font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em;
-}
-.view-count::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); }
-.view-count b { color: var(--text); font-weight: 600; }
-.view-count .lbl { text-transform: uppercase; }
-.view-count img { display: inline-block; width: 18px; height: 13.5px; border-radius: 2px; object-fit: cover; }
-.view-count .country { display: inline-flex; align-items: center; gap: 0.3rem; }
 
 /* ---------- CV page ---------- */
 .cv-head { padding: 2.5rem 0 1.25rem; }
@@ -457,8 +447,7 @@ details.coursework summary {
     --accent: #000; --accent-soft: #fff; --accent-text: #000;
   }
   body { font-size: 10.5pt; line-height: 1.45; }
-  .site-header, .skip-link, .btn-row, .theme-btn, .pill-link, #collaborate, .view-count, .bib, .actions, .method, .portrait, picture, .cv-frame { display: none !important; }
-  main section { padding: 1rem 0; break-inside: auto; }
+  .site-header, .skip-link, .btn-row, .theme-btn, .pill-link, #collaborate,   main section { padding: 1rem 0; break-inside: auto; }
   .hero { display: block; padding: 0 0 0.5rem; }
   h2, h3 { break-after: avoid; }
   .entry, .pub, .tiles li { break-inside: avoid; }

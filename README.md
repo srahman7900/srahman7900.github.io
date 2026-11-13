@@ -60,15 +60,6 @@ Change the footer line in `index.html` and `cv.html`, and `<lastmod>` in `sitema
 ### Collaboration form (Web3Forms)
 The form in the Collaborate section sends messages to srahman7900@gmail.com through [Web3Forms](https://web3forms.com). The `access_key` hidden input in `index.html` is the key Web3Forms emailed to me. It is meant to be public: it can only send messages to my inbox. If the key ever needs replacing, create a new one on web3forms.com and change that one value. If the service does not answer, the form shows a link that opens the visitor's email app with the message already written, so nothing is lost.
 
-### View counter (GoatCounter)
-`index.html` and `cv.html` load the GoatCounter script, which counts visits without cookies. Once a day, `.github/workflows/view-stats.yml` reads the totals and the top three countries and writes `country-stats.json` to the `stats` branch. The footer pill reads that file and stays hidden until it exists.
-
-Setup, once:
-1. Sign up at goatcounter.com with the code `srahman7900`. If that code is taken, use another and change it in `index.html`, `cv.html` and the workflow (`GC_SITE`).
-2. In GoatCounter, open Settings → API, create a token with "Read statistics" permission, and copy it.
-3. In this GitHub repo, open Settings → Secrets and variables → Actions → New repository secret. Name it `GOATCOUNTER_TOKEN` and paste the token.
-4. Open Actions → View stats → Run workflow. The pill appears after the first run.
-
 ## Writing rules for this site
 - No em dash characters. Use a comma, a colon or two sentences.
 - British spelling in my own sentences. Copy paper titles exactly.
